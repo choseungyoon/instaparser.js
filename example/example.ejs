@@ -1,0 +1,56 @@
+<!-- insta parser 예제입니다. -->
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Insta Parser Example</title>
+  <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/example.css"/>
+
+</head>
+<body>
+
+
+  <header class="header">
+    <span class="header-title">
+      <h1>Instagram Parser Example</h1>
+    </span>
+  </header>
+  <section>
+    <h2 class="title">Most Photo - <%= tag %></h2>
+
+    <div class="carousel">
+      <% for(var i=0; i<topPost.length; i++) {%>
+        <div class="imgWrap">
+          <img src="<%= topPost[i].thumbnail_src %>" alt="polaroid" />
+          <p class="imgDescription"><%= topPost[i].caption %></p>
+        </div>
+      <% } %>
+    </div>
+
+    <h2 class="title">Recent Photo - <%= tag %></h2>
+
+    <div class="carousel">
+      <% for(var i=0; i<recentPost.length; i++) {%>
+        <div class="imgWrap">
+          <img src="<%= recentPost[i].thumbnail_src %>" alt="recentPost[i].date" />
+          <p class="imgDescription"><%= recentPost[i].caption %></p>
+        </div>
+      <% } %>
+    </div>
+  </section>
+  <footer class="footer">
+    <span class="footer-context">
+      <h4>Copyright © 2016 instaparser Team.</h4>
+    </span>
+  </footer>
+
+
+  <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/slick/slick.min.js"></script>
+  <script type="text/javascript" src="/js/example.js"></script>
+
+</body>
+</html>
